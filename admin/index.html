@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin | PINGOS LIVE</title>
+  <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+  <section id="login-view" class="login-shell">
+    <form id="login-form" class="login-card">
+      <div class="brand"><b>PINGOS</b><i>LIVE</i></div>
+      <p class="overline">PAINEL ADMINISTRATIVO</p>
+      <h1>Bem-vindo de volta.</h1>
+      <p class="muted">Entre com sua conta autorizada para gerenciar a operação.</p>
+      <label>E-mail<input id="login-email" type="email" autocomplete="email" required></label>
+      <label>Senha<input id="login-password" type="password" autocomplete="current-password" required></label>
+      <button class="primary" type="submit">Entrar no painel</button>
+      <p id="login-message" class="message"></p>
+      <a class="back" href="../">← Voltar ao site</a>
+    </form>
+  </section>
+
+  <div id="app-view" class="app hidden">
+    <aside>
+      <div class="brand side-brand"><b>PINGOS</b><i>LIVE</i></div>
+      <nav id="admin-nav">
+        <button data-view="dashboard" class="active">Visão geral</button>
+        <button data-view="site">Conteúdo do site</button>
+        <button data-view="plans">Planos e preços</button>
+        <button data-view="clients">Clientes</button>
+        <button data-view="contracts">Contratos</button>
+        <button data-view="team">Equipe e acessos</button>
+        <button data-view="history">Histórico</button>
+      </nav>
+      <div class="aside-bottom">
+        <small id="user-email"></small>
+        <button id="logout-button" class="ghost">Sair</button>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <button id="menu-button" class="menu-button">☰</button>
+        <div><p class="overline">PINGOS LIVE</p><h2 id="page-title">Visão geral</h2></div>
+        <a class="site-link" href="../" target="_blank">Abrir site ↗</a>
+      </header>
+      <section id="workspace" class="workspace"></section>
+    </main>
+  </div>
+
+  <dialog id="editor-dialog">
+    <form id="editor-form" method="dialog">
+      <div class="dialog-head"><h3 id="dialog-title">Editar</h3><button type="button" id="close-dialog">×</button></div>
+      <div id="editor-fields" class="form-grid"></div>
+      <p id="editor-message" class="message"></p>
+      <div class="dialog-actions"><button type="button" id="cancel-dialog" class="secondary">Cancelar</button><button type="submit" class="primary">Salvar alterações</button></div>
+    </form>
+  </dialog>
+
+  <script type="module" src="./admin.js"></script>
+</body>
+</html>
